@@ -1,0 +1,71 @@
+.big-number {
+  font-size: 1.6em;
+  text-align: center;
+  margin: 1.2em 0 0.6em;
+  line-height: 1.3;
+}
+
+.reveal table {
+  font-size: 0.8em;
+}
+
+.reveal blockquote {
+  font-style: italic;
+  background: #f4f6f8;
+  border-left: 6px solid #2a76dd;
+  box-shadow: none;
+  width: 90%;
+  padding: 0.4em 0.8em;
+}
+
+.triangle {
+  position: relative;
+  width: 520px;
+  height: 260px;
+  margin: 0.4em auto 0;
+  font-size: 0.75em;
+}
+.triangle::before {
+  content: "";
+  position: absolute;
+  left: 110px;
+  top: 40px;
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 190px solid #e8eef8;
+}
+.triangle div {
+  position: absolute;
+  font-weight: 600;
+}
+.t-top   { left: 0; right: 0; top: 0; text-align: center; color: #2a76dd; }
+.t-left  { left: 20px; bottom: 0; color: #2a9d55; }
+.t-right { right: 0; bottom: 0; color: #c0504d; }
+.t-mid   { left: 0; right: 0; top: 150px; text-align: center; font-style: italic; color: #555; }
+
+.flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.6em;
+  margin-top: 0.4em;
+}
+.flow-box {
+  border: 2px solid #2a76dd;
+  border-radius: 10px;
+  padding: 0.4em 0.8em;
+  text-align: center;
+  background: #fff;
+  width: 90%;
+}
+.flow-hidden {
+  border-style: dashed;
+  background: #e8eef8;
+}
+.flow-arrow {
+  font-size: 1.4em;
+  color: #2a76dd;
+  line-height: 1.2;
+}

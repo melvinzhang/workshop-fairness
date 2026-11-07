@@ -1,0 +1,202 @@
+---
+title: "Who Gets Which Workshop?"
+subtitle: "Why a *fair* allocation is harder than it looks"
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    incremental: false
+    transition: fade
+    center: false
+    css: slides.css
+---
+
+## Every student ranks the workshops. Every room has 10 seats.
+
+| Student | 1st | 2nd | 3rd |
+|---|---|---|---|
+| Alice | Robotics | Art | Music |
+| Bob | Robotics | Music | Drama |
+| Chloé | Art | Robotics | Drama |
+| … | … | … | … |
+
+::: notes
+~1 min. Workshops run twice (Session 1 and Session 2). Each student attends two different workshops, one per session. Each room holds 10 students, so each workshop has 20 seats across the two sessions. Question: what is a fair way to decide who goes where?
+:::
+
+## Splitting students into two sessions is the easy part
+
+::: {.big-number}
+Each workshop runs twice = 20 seats<br>Fill at most 20 → a timetable **always works** ✅
+:::
+
+::: notes
+~1 min. First decide which two workshops each student gets, then split into sessions; a computer does it instantly. So the hard question is not scheduling. It is: who gets the popular workshops?
+:::
+
+## The hard part: popular workshops run out of seats
+
+::: {.big-number}
+40 want Robotics<br>**20** seats
+:::
+
+::: notes
+~0.5 min. Someone will be disappointed. Fairness is about deciding who, and why.
+:::
+
+## Best for the group, or best for the worst-off? They disagree.
+
+| | Alice | Bob | Chloé | Dev | **Total rank**<br><small>(lower = better)</small> | **Worst** |
+|---|:-:|:-:|:-:|:-:|:-:|:-:|
+| **Plan A** | 1st | 1st | 1st | 4th | **7** | 4th |
+| **Plan B** | 2nd | 2nd | 2nd | 2nd | 8 | **2nd** |
+
+::: notes
+~2 min. For simplicity, think about just one of your two workshops (same for the next few slides). Plan A: better total ranking. Plan B: nobody badly off. Poll the audience: hands up for A, hands up for B. There will be a split. That split IS the problem.
+:::
+
+## A lottery is fair *before* the draw, not *after*
+
+| Drawn | Student | Gets |
+|:-:|---|---|
+| 1 | Bob | 1st choice ✅ |
+| 2 | Alice | 1st choice ✅ |
+| … | … | … |
+| 40 | Dev | 5th choice ❌ |
+
+::: notes
+~1.5 min. Draw names from a hat; each student picks in turn. Same chance for everyone beforehand, nobody gains by lying. But the last name drawn may get nothing they wanted. Fair process ≠ fair outcome.
+:::
+
+## Taking turns helps, but going first still wins
+
+::: {.big-number}
+Round 1: Alice → Bob → Chloé → Dev<br>
+Round 2: Dev → Chloé → Bob → Alice
+:::
+
+::: notes
+~1.5 min. The "snake draft", like picking teams in PE. Easy to explain, nobody much worse off than anyone else. But order still matters, and it can miss better matches a computer would find.
+:::
+
+## Ranking honestly can backfire
+
+*Rule: fill everyone's 1st choices first, then 2nd choices, …*
+
+| | Really wants | Writes on form | Gets |
+|---|:-:|:-:|:-:|
+| Alice (honest) | Robotics, then Art | Robotics, Art | **leftovers** ❌ |
+| Bob (tactical) | Robotics, then Art | **Art**, Robotics | **Art** ✅ |
+
+::: notes
+~2 min. Alice and Bob want exactly the same thing. Robotics is oversubscribed, so Alice likely loses the draw. By the time 2nd choices are processed, Art is already full of people who ranked it 1st, so she ends up with leftovers. Bob knows he probably can't win Robotics, so he "spends" his 1st choice on Art, where he can still win. Same wishes, different forms, different outcomes. This is the "Boston mechanism"; Boston dropped it for school places for exactly this reason.
+:::
+
+## Three things we want from a fair rule
+
+| | Means… |
+|---|---|
+| **Honest is best** | Writing your true wishes never hurts you |
+| **No waste** | No swap could make someone happier without hurting anyone |
+| **Equal treatment** | Nobody ends up much worse off than anyone else |
+
+::: notes
+~1 min. Tie back to the puzzles. Honest is best: Alice vs Bob on the form. No waste: if two students would both rather swap seats, the plan wasted happiness; Plan A in puzzle 1 has no waste but leaves Dev far behind. Equal treatment: Plan B; the lottery fails it (the last name drawn gets their 5th choice); the snake draft roughly passes (going first helps, but only by a little).
+:::
+
+## Every method has a weak spot
+
+| Method | Honest is best | No waste | Equal treatment |
+|---|:-:|:-:|:-:|
+| Best total ranking | ❌ | ✅ | ❌ |
+| Lottery + pick in turn | ✅ | ✅ | ❌ |
+| Snake draft | ❌ | ❌ | ✅ |
+| First choices first | ❌ | ❌ | ❌ |
+
+::: notes
+~1.5 min. Don't dwell on each cell; no row is all green. Lottery is equal only before the draw; snake draft only roughly equal.
+:::
+
+## Nobody has found a rule that does all three
+
+```{=html}
+<div class="triangle">
+  <div class="t-top">Honest is best</div>
+  <div class="t-left">No waste</div>
+  <div class="t-right">Equal treatment</div>
+  <div class="t-mid">No known rule</div>
+</div>
+```
+
+::: notes
+~1.5 min. No known rule for this setting is honest-proof, waste-free and equal for everyone at once. Intuition: no waste means every conflict needs a winner; honesty means your form can't buy you priority; so priority must be a fixed pecking order, and the back of the line loses. For closely related models this is a theorem: Pápai (2001), Hatfield (2009, each student gets exactly k items) show only a pecking order ("serial/sequential dictatorship") is honest-proof and waste-free. Those models assume one seat per workshop; our workshops have many interchangeable seats, so there's no formal proof for exactly our case. Course-allocation researchers (Budish & Cantillon 2012) treat it as applying.
+:::
+
+## Big schools get close: a pretend market with equal play money
+
+*A different form: scores instead of ranks*
+
+::: {.columns}
+::: {.column width="55%"}
+```{=html}
+<div class="flow">
+  <div class="flow-box">📝 Each student scores every workshop 0–100<br><small>(0 = never give me this)</small></div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-box flow-hidden">💻 Computer gives everyone the same budget,<br>sets prices, buys each student's best pair,<br>adjusts prices until rooms are full</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-box">🎟️ Two workshops each</div>
+</div>
+```
+:::
+::: {.column width="45%"}
+| Topic | Price (tokens) |
+|---|:-:|
+| Robotics | 800 |
+| Art | 500 |
+| Music | 200 |
+| Drama | 100 |
+
+*Budget: 1,000 tokens each*
+:::
+:::
+
+::: aside
+Budish (2011): approximate competitive equilibrium from equal incomes
+:::
+
+::: notes
+~1.5 min. Eric Budish's "course allocation" mechanism (A-CEEI, 2011). Unlike the ranked rules, students give each workshop a score from 0 to 100 (0 = never). A pair is worth the sum of its two scores, so the computer can always tell which affordable pair a student prefers, e.g. {1st, 4th} vs {2nd, 3rd}, which a ranking alone cannot. Students submit once; the market runs inside the computer, which "shops" for each student using their scores. Popular topics get expensive, so nobody can grab two popular ones cheaply. With tiny random differences in budget to break ties. In big schools: one form barely moves prices, so honesty is (nearly) best; nearly no waste; envy limited to about one workshop. Catches: approximate (rooms may be off by a seat or two), hard to compute by hand, hard to explain. Wharton uses exactly this 0–100 scoring.
+:::
+
+## It's already used for real course registration
+
+| Where | Who |
+|---|---|
+| **Wharton** (UPenn) | Business-school students, since 2013 |
+| **Columbia Business School** | Business-school students |
+| **UCLA Anderson** | Business-school students, replaced course bidding |
+| **Vassar College** | Undergraduates |
+
+::: notes
+~1 min. Branded "Course Match"; Wharton spun it out in 2017 as the company Cognomos. References: Budish (2011, Journal of Political Economy); Budish, Cachon, Kessler & Othman (2017, Operations Research) on the Wharton rollout. Lab study (Budish & Kessler) found students make reporting mistakes, which costs some welfare: the form design matters.
+:::
+
+## Fairness is a choice. Make it openly.
+
+::: {.big-number}
+Choose what you value<br>→ Pick a rule and the form it needs<br>→ Publish it before students fill it in
+:::
+
+::: notes
+~1.5 min. Nobody left behind → computer finds the plan whose worst-off student is best off (needs a ranking). Simple and trusted → random snake draft (needs a ranking). Big school, close to all three goals → equal-budget market (needs 0–100 scores). Whatever the form, collect enough choices to give room to manoeuvre (e.g. rank or score at least 5 workshops). Publish the rule before students fill in the form.
+:::
+
+## {.center}
+
+::: {.big-number}
+Questions?
+:::
+
+::: notes
+Recap if time: sessions easy; popular seats hard; "fair" has several conflicting meanings; no known perfect system; choose openly and explain why.
+:::
