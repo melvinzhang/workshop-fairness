@@ -111,7 +111,7 @@ Round 2: Dev → Chloé → Bob → Alice
 | **Best total ranking** | ❌<br><small>can be gamed</small> | ✅ | ❌<br><small>one student left far behind</small> |
 | **Lottery** | ✅ | ✅ | ❌<br><small>last name drawn loses</small> |
 | **Taking turns** | ❌<br><small>grab what runs out</small> | ❌<br><small>misses better swaps</small> | 🟡<br><small>roughly</small> |
-| **First choices first** | ❌<br><small>Bob's trick</small> | ❌<br><small>once people use tricks</small> | ❌<br><small>bad luck piles up</small> |
+| **First choices first** | ❌<br><small>ranking tactically pays</small> | ❌<br><small>once people use tricks</small> | ❌<br><small>bad luck piles up</small> |
 
 ::: notes
 ~1.5 min. No row is all green. Each small caption points back to an earlier slide. Lottery is equal only before the draw. Taking turns: envy limited to about one workshop if students pick honestly, but going first still helps. First choices first: with honest forms nothing is wasted, but once people rank tactically the result can waste good matches; and losing your 1st-choice draw also costs you your 2nd choice.
