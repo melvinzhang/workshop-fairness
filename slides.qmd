@@ -108,7 +108,7 @@ Round 2: Dev → Chloé → Bob → Alice
 
 | | Honest is best | No waste | Equal treatment |
 |---|:-:|:-:|:-:|
-| **Best total ranking** | ❌<br><small>can be gamed</small> | ✅ | ❌<br><small>Dev left behind</small> |
+| **Best total ranking** | ❌<br><small>can be gamed</small> | ✅ | ❌<br><small>one student left far behind</small> |
 | **Lottery** | ✅ | ✅ | ❌<br><small>last name drawn loses</small> |
 | **Taking turns** | ❌<br><small>grab what runs out</small> | ❌<br><small>misses better swaps</small> | 🟡<br><small>roughly</small> |
 | **First choices first** | ❌<br><small>Bob's trick</small> | ❌<br><small>once people use tricks</small> | ❌<br><small>bad luck piles up</small> |
